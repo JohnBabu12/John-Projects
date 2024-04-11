@@ -1,0 +1,23 @@
+#include<lpc21xx.h>
+#include<string.h>
+#include"delay.h"
+#include"i2c_eeprom.h"
+#include"i2c.h"
+#include"defines.h"
+#include"types.h"
+main()
+{
+	u8 *ptr;
+	init_i2c();
+	SETBIT(IODIR0,7);
+	i2c_eeprom_page_write(0x50,0,"1234",4);
+	i2c_eeprom_seq_read(0x50,0,ptr,4);
+	if(strcmp(ptr,"1234")==0)
+	{
+		CPLBIT(IOPIN0,7);
+		delay_ms(1000);
+		CPLBIT(IOPIN0,7);
+		delay_ms(1000);
+		while(1);
+	}
+}

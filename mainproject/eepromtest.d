@@ -1,0 +1,10 @@
+eepromtest.o: eepromtest.c
+eepromtest.o: C:\KeilARM\ARM\INC\Philips\lpc21xx.h
+eepromtest.o: C:\KeilARM\ARM\RV31\INC\string.h
+eepromtest.o: delay.h
+eepromtest.o: i2c_eeprom.h
+eepromtest.o: types.h
+eepromtest.o: i2c.h
+eepromtest.o: types.h
+eepromtest.o: defines.h
+eepromtest.o: types.h
